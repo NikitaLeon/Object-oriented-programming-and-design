@@ -157,4 +157,31 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    public void quantity() {
+        Radio rad = new Radio(10);
+
+        Assertions.assertEquals(10, rad.getQuantityStation());
+        Assertions.assertEquals(9, rad.getMaxStation());
+        Assertions.assertEquals(0, rad.getMinStation());
+    }
+
+    @Test
+    public void currentStation() {
+        Radio rad = new Radio(30);
+        rad.setNewCurrentStation(25);
+
+        Assertions.assertEquals(30, rad.getQuantityStation());
+        Assertions.assertEquals(25, rad.getCurrentStation());
+    }
+
+    @Test
+    public void test() {
+        Radio rad = new Radio();
+
+        Assertions.assertEquals(10, rad.getQuantityStation());
+        Assertions.assertEquals(9, rad.getMaxStation());
+        Assertions.assertEquals(0, rad.getMinStation());
+    }
 }
